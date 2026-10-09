@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<script>if (new URLSearchParams(location.search).has("embed")) document.documentElement.classList.add("embed");</script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refinance Calculator | Del Rey Lending</title>
+  <meta name="description" content="Estimate your new mortgage payment, monthly savings and break-even point with the Del Rey Lending refinance calculator.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239c7f6a'/%3E%3Cpath d='M6 16 16 7l10 9v9H6z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="calc-page">
+  <header class="topbar">
+    <a href="index.html" class="brand">DEL REY LENDING</a>
+    <a class="phone" href="tel:+13104152039">(310) 415-2039</a>
+  </header>
+  <main>
+    <section id="refinance" class="calc">
+      <h2>Refinance calculator</h2>
+      <p class="calc-intro">Compare your current loan with a new one: new payment, monthly savings, and how long it takes for the savings to cover closing costs.</p>
+      <p class="calc-estimate" role="note"><strong>The interest rate is just an estimate.</strong> Talk to a loan officer for your real rate and terms: call <a href="tel:+13104152039">(310) 415-2039</a> or request a free quote.</p>
+      <div class="calc-wrap">
+        <form id="calc" class="calc-form" autocomplete="off" novalidate>
+          <fieldset>
+            <legend>Your current loan</legend>
+            <label>Loan balance ($)<input name="balance" inputmode="decimal" value="400,000"></label>
+            <label>Interest rate (%)<input name="rate" inputmode="decimal" value="7.25"></label>
+            <label>Years remaining<input name="years" inputmode="decimal" value="28"></label>
+          </fieldset>
+          <fieldset>
+            <legend>Your new loan</legend>
+            <label>Estimated new rate (%)<input name="newRate" inputmode="decimal" value="6.25"><small>Estimate only. Your loan officer will give you your real rate.</small></label>
+            <label>New term
+              <select name="newYears"><option>30</option><option>25</option><option>20</option><option>15</option><option>10</option></select>
+            </label>
+            <label>Closing costs ($)<input name="costs" inputmode="decimal" value="6,000"></label>
+            <label>Cash out ($)<input name="cashOut" inputmode="decimal" value="0"></label>
+            <label class="check"><input type="checkbox" name="rollIn" checked> Add closing costs to the new loan</label>
+          </fieldset>
+        </form>
+        <div class="calc-results" aria-live="polite">
+          <div class="tiles">
+            <div class="tile"><span>Current payment</span><strong id="r-cur">-</strong></div>
+            <div class="tile"><span>New payment</span><strong id="r-new">-</strong></div>
+            <div class="tile hl"><span>Monthly change</span><strong id="r-diff">-</strong></div>
+            <div class="tile"><span>Break-even</span><strong id="r-be">-</strong></div>
+            <div class="tile"><span>New loan amount</span><strong id="r-amt">-</strong></div>
+            <div class="tile"><span>Lifetime difference</span><strong id="r-life">-</strong></div>
+          </div>
+          <p id="r-summary" class="calc-summary"></p>
+          <div class="calc-cta">
+            <button type="button" class="btn" data-quote>Get my real rate quote</button>
+            <a class="btn btn-ghost" href="tel:+13104152039">Call (310) 415-2039</a>
+          </div>
+        </div>
+      </div>
+      <p class="calc-note">Estimates only. Payments are principal and interest and do not include property taxes, homeowners insurance, mortgage insurance or HOA dues. The interest rate is just an estimate and is not a quote or offer to lend. Talk to a loan officer for your real rate and terms. Your actual rate and costs depend on credit, equity, property and loan program.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <p><a href="index.html">Home</a> | Del Rey Lending | Company NMLS ID 2456300 | <a href="tel:+13104152039">(310) 415-2039</a> | Hablamos español</p>
+    <p class="eho">Equal Housing Opportunity</p>
+  </footer>
+  <script src="calc.js"></script>
+</body>
+</html>
