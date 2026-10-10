@@ -369,4 +369,11 @@
     }), { threshold: 0.2 });
     cards.forEach((c) => io.observe(c));
   }
+
+  // ---------- Compact header menu ----------
+  const menuBtn = $("#menu-btn"), siteNav = $("#site-nav");
+  const setMenu = (open) => { siteNav.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", String(open)); };
+  menuBtn.addEventListener("click", () => setMenu(!siteNav.classList.contains("open")));
+  siteNav.addEventListener("click", (e) => { if (e.target.closest("a, button")) setMenu(false); });
+  window.addEventListener("resize", () => { if (innerWidth > 1080) setMenu(false); });
 })();
