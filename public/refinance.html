@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=202610091736">
 </head>
 <body class="calc-page">
   <header class="topbar">
@@ -41,11 +41,21 @@
             <label>Cash out ($)<input name="cashOut" inputmode="decimal" value="0"></label>
             <label class="check"><input type="checkbox" name="rollIn" checked> Add closing costs to the new loan</label>
           </fieldset>
+          <fieldset class="escrow">
+            <legend>Taxes &amp; insurance</legend>
+            <label class="check"><input type="checkbox" name="escrow" id="escrow-on"> Add taxes &amp; insurance to show my full monthly payment</label>
+            <div class="escrow-fields" id="escrow-fields" hidden>
+              <label>Property tax per year ($)<input name="tax" inputmode="decimal" value="4,400"><small>In LA County this is usually about 1.1% to 1.25% of the home's assessed value.</small></label>
+              <label>Homeowners insurance per year ($)<input name="ins" inputmode="decimal" value="1,500"></label>
+              <label>Mortgage insurance per month ($)<input name="mi" inputmode="decimal" value="0"><small>PMI or FHA MIP, if you pay it.</small></label>
+              <label>HOA dues per month ($)<input name="hoa" inputmode="decimal" value="0"></label>
+            </div>
+          </fieldset>
         </form>
         <div class="calc-results" aria-live="polite">
           <div class="tiles">
-            <div class="tile"><span>Current payment</span><strong id="r-cur">-</strong></div>
-            <div class="tile"><span>New payment</span><strong id="r-new">-</strong></div>
+            <div class="tile"><span>Current payment</span><strong id="r-cur">-</strong><small id="r-cur-sub"></small></div>
+            <div class="tile"><span>New payment</span><strong id="r-new">-</strong><small id="r-new-sub"></small></div>
             <div class="tile hl"><span>Monthly change</span><strong id="r-diff">-</strong></div>
             <div class="tile"><span>Break-even</span><strong id="r-be">-</strong></div>
             <div class="tile"><span>New loan amount</span><strong id="r-amt">-</strong></div>
@@ -58,13 +68,13 @@
           </div>
         </div>
       </div>
-      <p class="calc-note">Estimates only. Payments are principal and interest and do not include property taxes, homeowners insurance, mortgage insurance or HOA dues. The interest rate is just an estimate and is not a quote or offer to lend. Talk to a loan officer for your real rate and terms. Your actual rate and costs depend on credit, equity, property and loan program.</p>
+      <p class="calc-note">Estimates only. Payments are principal and interest only unless you turn on "Add taxes &amp; insurance". The interest rate is just an estimate and is not a quote or offer to lend. Talk to a loan officer for your real rate and terms. Your actual rate and costs depend on credit, equity, property and loan program.</p>
     </section>
   </main>
   <footer class="footer">
     <p><a href="index.html">Home</a> | Del Rey Lending | Company NMLS ID 2456300 | <a href="tel:+13104152039">(310) 415-2039</a> | Hablamos español</p>
     <p class="eho">Equal Housing Opportunity</p>
   </footer>
-  <script src="calc.js"></script>
+  <script src="calc.js?v=202610091736"></script>
 </body>
 </html>

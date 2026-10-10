@@ -95,6 +95,9 @@ input:focus, textarea:focus { outline: 2px solid var(--accent); border-color: tr
 .tile { background: #1f1f1f; border-radius: 6px; padding: 14px; display: grid; gap: 4px; }
 .tile span { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .tile strong { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.tile small { font-size: 11px; color: var(--muted); }
+.calc .escrow-fields { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+.calc .escrow-fields[hidden] { display: none; }
 .tile.hl { background: var(--accent); }
 .tile.hl span { color: #fff; }
 .good { color: #9fd49f; } .bad { color: #f0a3a3; }
