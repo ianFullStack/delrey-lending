@@ -359,4 +359,14 @@
   });
   if (location.hash === "#quote") openQuote();
   if (location.hash === "#refinance") openCalc();
+
+  // ---------- Service cards slide in from the sides on scroll ----------
+  const cards = document.querySelectorAll(".services .card");
+  if ("IntersectionObserver" in window && cards.length === 3) {
+    ["from-left", "from-below", "from-right"].forEach((dir, k) => cards[k].classList.add("reveal", dir));
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    }), { threshold: 0.2 });
+    cards.forEach((c) => io.observe(c));
+  }
 })();
