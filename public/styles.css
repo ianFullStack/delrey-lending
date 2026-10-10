@@ -192,7 +192,6 @@ html.embed .calc { padding: 28px 20px; }
   .cards, .contact { grid-template-columns: 1fr; }
   .contact { background-attachment: scroll; }
   .card { min-height: 0; }
-  .topbar nav { display: none; }
   .calc-wrap { grid-template-columns: 1fr; }
   .hero { background-position: 56% center !important; }
   .tiles { grid-template-columns: 1fr 1fr; }
@@ -208,4 +207,23 @@ html.embed .calc { padding: 28px 20px; }
   .hero-logo img { width: min(500px, 36vw); }
   .hero-actions { justify-content: flex-start; }
   .hero-es { margin-left: 2px !important; }
+}
+
+/* Header: links never wrap; below 1080px they fold into a menu and the phone number stays visible on the right */
+.topbar nav a, .topbar nav .btn { white-space: nowrap; }
+.menu-btn { display: none; width: 40px; height: 40px; align-items: center; justify-content: center; background: none; border: 1px solid #444; border-radius: 4px; color: #fff; cursor: pointer; flex-shrink: 0; }
+.menu-btn svg { width: 22px; height: 22px; }
+@media (max-width: 1080px) {
+  .topbar { flex-wrap: wrap; gap: 12px; }
+  .menu-btn { display: inline-flex; }
+  .topbar .phone { margin-left: auto; }
+  .topbar nav { display: none; order: 10; width: 100%; flex-direction: column; gap: 0; padding-top: 6px; }
+  .topbar nav.open { display: flex; }
+  .topbar nav a { padding: 12px 4px; border-top: 1px solid #2c2c2c; font-size: 16px; }
+  .topbar nav .btn { margin: 12px 0 4px; align-self: flex-start; padding: 12px 20px; font-size: 12px; }
+}
+@media (max-width: 420px) {
+  .topbar { padding: 12px 14px; gap: 10px; }
+  .brand img { height: 32px; }
+  .topbar .phone svg { display: none; }
 }
