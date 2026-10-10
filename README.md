@@ -24,3 +24,9 @@ Plain HTML/CSS/JS replacement for the GoDaddy Website Builder site (delreylendin
 - Monica does not want a personal bio or personal license number on the site (2026-10-09). Company NMLS 2456300 and phone (310) 415-2039 are shown.
 - Add a privacy policy page (the site collects contact info).
 - The old site listed "Home Equity Line of Credit Loans (GA)". Confirm what "GA" meant.
+
+## Publishing an update
+1. Bump the `?v=` number on styles.css / app.js / calc.js in index.html and refinance.html (browsers cache old copies otherwise).
+2. `git commit`, `git push`, then `git subtree split --prefix public -b gh-pages && git push -f origin gh-pages`.
+
+Leads: FormSubmit to loandoc21@gmail.com, cc monica@delreylending.com (activated 2026-10-09 for delreylending.com).
