@@ -5,7 +5,7 @@
 //   MAIL_FROM       e.g. "Del Rey Lending Website <website@delreylending.com>" (domain must be verified in Resend)
 //   MAIL_TO         optional comma list, defaults to the two addresses below
 
-const DEFAULT_TO = ["loandoc21@gmail.com", "monica@delreylending.com", "jacobTurner@delreylending.com"];
+const DEFAULT_TO = ["loandoc21@gmail.com", "monica@delreylending.com"];
 
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
