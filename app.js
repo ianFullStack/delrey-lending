@@ -31,7 +31,7 @@
   // ---------- Lead submission (shared by form + chat) ----------
   // Leads are emailed by FormSubmit (formsubmit.co). Locally, dev-server.ts handles /api/contact instead.
   const LEAD_TO = "loandoc21@gmail.com";
-  const LEAD_CC = "monica@delreylending.com,jacobTurner@delreylending.com";
+  const LEAD_CC = "monica@delreylending.com";
   const LOCAL = ["localhost", "127.0.0.1"].includes(location.hostname);
   async function sendLead(data) {
     const failMsg = "Sorry, that didn't go through. Please call us at (310) 415-2039.";
