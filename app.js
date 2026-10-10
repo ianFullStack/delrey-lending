@@ -107,6 +107,8 @@
       a: "Our hours: Monday to Friday 9am to 5pm, Saturday by appointment, closed Sunday. You can call us at (310) 415-2039." },
     { id: "where", keys: ["where", "address", "located", "location", "office"],
       a: "We're at 11500 Olympic Blvd, Suite 400, Los Angeles, CA 90064. Phone: (310) 415-2039." },
+    { id: "states", keys: ["what states", "which states", "other states", "out of state", "licensed in", "outside california", "other state", "nevada", "arizona", "texas", "florida", "oregon", "washington", "new york", "nationwide", "where do you lend", "do you lend in"],
+      a: "We make loans in California only. If your property is in California, we're happy to help: call (310) 415-2039 or ask me anything here." },
     { id: "phone", keys: ["phone", "number", "call you", "telephone"],
       a: "You can reach us at (310) 415-2039, Monday to Friday 9am to 5pm, and Saturday by appointment." },
     { id: "spanish", chip: "¿Hablan español?", keys: ["spanish", "español", "espanol", "habla", "hablan"],
@@ -237,7 +239,10 @@
   const STEPS = [
     { key: "zip", title: "Today's mortgage rates", sub: "Rates change daily and depend on your situation. Start with your ZIP code for a free custom quote.",
       field: { type: "text", label: "Property ZIP code", inputmode: "numeric", maxlength: 5, autocomplete: "postal-code" },
-      valid: (v) => /^\d{5}$/.test(v) || "Please enter a 5-digit ZIP code." },
+      // California ZIP codes run 90001-96162 (prefixes 900-961).
+      valid: (v) => !/^\d{5}$/.test(v) ? "Please enter a 5-digit ZIP code."
+        : (+v.slice(0, 3) >= 900 && +v.slice(0, 3) <= 961) ? true
+        : "Sorry, we only make loans in California. Please enter a California ZIP code, or call us at (310) 415-2039 with any questions." },
     opt("purpose", "What would you like to do?", "", ["Buy a home", "Refinance", "Cash-out refinance", "Home equity line (HELOC)"]),
     opt("property", "What type of property?", "", ["Single family", "Condo / townhome", "Multi-unit (2-4)", "Commercial"]),
     opt("use", "How will the property be used?", "", ["Primary residence", "Second home", "Investment property"]),
