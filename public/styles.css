@@ -20,6 +20,10 @@ h2 { color: var(--accent); font-size: clamp(28px, 4vw, 39px); text-align: center
 .brand { font-family: var(--head); text-decoration: none; letter-spacing: .03em; }
 .topbar nav { display: flex; gap: 20px; font-size: 14px; }
 .topbar nav a { text-decoration: none; color: var(--muted); }
+.brand img { display: block; height: 40px; width: auto; }
+.hero-logo { margin: 0 0 8px; line-height: 0; }
+.hero-logo img { width: min(560px, 82vw); height: auto; filter: drop-shadow(0 2px 10px rgba(0,0,0,.55)); }
+.quote-logo { display: block; height: 34px; width: auto; margin: 0 auto 16px; }
 .topbar nav a:hover { color: var(--text); }
 
 .btn { display: inline-block; border: 0; cursor: pointer; padding: 14px 28px; background: var(--accent); color: #fff; font: 600 13px var(--body); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; border-radius: 2px; }
